@@ -8,6 +8,7 @@
 *.log
 *.log.*
 *.sig
+*.ttf
 
 pkg/
 src/
