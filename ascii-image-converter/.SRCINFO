@@ -6,8 +6,7 @@ pkgbase = ascii-image-converter
 	arch = x86_64
 	license = Apache
 	makedepends = go
-	conflicts = ascii-image-converter-git
-	source = ascii-image-converter-1.13.0.tar.gz::https://github.com/TheZoraiz/ascii-image-converter/archive/refs/tags/v1.13.0.tar.gz
+	source = https://github.com/thezoraiz/ascii-image-converter/archive/v1.13.0.tar.gz
 	sha256sums = e9774374d6d3e0504bba70e2499b5472a216c93c61a0cafd0265ae47e9c7c5e5
 
 pkgname = ascii-image-converter
