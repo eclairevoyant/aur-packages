@@ -1,0 +1,21 @@
+--- a/QuiteRSS.pro	2023-01-12 17:47:21.994842264 -0500
++++ b/QuiteRSS.pro	2023-01-12 17:49:04.825143301 -0500
+@@ -285,6 +285,9 @@
+   desktop.files = quiterss.desktop
+   desktop.path =  $$quote($$PREFIX/share/applications)
+ 
++  appdata.files = quiterss.appdata.xml
++  appdata.path =  $$quote($$PREFIX/share/metainfo)
++
+   target1.files = images/48x48/quiterss.png
+   target1.path =  $$quote($$PREFIX/share/pixmaps)
+ 
+@@ -311,7 +314,7 @@
+   style.files = style
+   style.path = $$quote($$DATA_DIR)
+ 
+-  INSTALLS += target desktop target1
++  INSTALLS += target desktop appdata target1
+   INSTALLS += icon_16 icon_32 icon_48 icon_64 icon_128 icon_256
+   INSTALLS += translations sound style
+ }
