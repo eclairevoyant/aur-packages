@@ -1,0 +1,17 @@
+pkgbase = torch7-xlua-git
+	pkgdesc = A set of useful functions to extend Lua (string, table, ...)
+	pkgver = 1.0.0.r36.41308fe
+	pkgrel = 1
+	url = https://github.com/torch/xlua
+	arch = x86_64
+	arch = i686
+	license = BSD
+	makedepends = cmake
+	makedepends = git
+	depends = torch7-git>=r819
+	provides = torch7-xlua
+	conflicts = torch7-xlua
+	source = torch7-xlua::git+https://github.com/torch/xlua
+	b2sums = SKIP
+
+pkgname = torch7-xlua-git
