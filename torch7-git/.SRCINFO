@@ -1,0 +1,22 @@
+pkgbase = torch7-git
+	pkgdesc = LuaJIT-based scientific computing framework
+	pkgver = r1337.dde9e56
+	pkgrel = 1
+	url = http://torch.ch
+	arch = x86_64
+	arch = i686
+	license = custom
+	makedepends = cmake
+	makedepends = git
+	depends = blas
+	depends = lapack
+	depends = luajit
+	depends = torch7-cwrap-git
+	depends = torch7-paths-git
+	optdepends = torch7-trepl-git: Interactive REPL shell
+	provides = torch7
+	conflicts = torch7
+	source = git+https://github.com/torch/torch7
+	b2sums = SKIP
+
+pkgname = torch7-git
