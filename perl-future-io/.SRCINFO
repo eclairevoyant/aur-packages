@@ -1,0 +1,19 @@
+pkgbase = perl-future-io
+	pkgdesc = Future-returning IO methods
+	pkgver = 0.11
+	pkgrel = 2
+	url = https://metacpan.org/release/Future-IO
+	arch = any
+	license = PerlArtistic
+	license = GPL
+	checkdepends = perl-test-identity
+	checkdepends = perl-test-pod
+	makedepends = perl-module-build
+	depends = perl-future
+	depends = perl-struct-dumb
+	depends = perl>=5.010
+	options = !emptydirs
+	source = http://search.cpan.org/CPAN/authors/id/P/PE/PEVANS/Future-IO-0.11.tar.gz
+	sha512sums = 8ee111cc1f0a0bfba84005de3e3bf0dadedf8be635f0a0a3b8423702db35fa1f76f7a0d47e32f5ed91163943d5acc788827e87233e11d0a4125a8f1d192c9a22
+
+pkgname = perl-future-io
