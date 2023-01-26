@@ -1,0 +1,20 @@
+pkgbase = torch7-cunn-git
+	pkgdesc = CUDA backend for Torch7 Neural Network Package
+	pkgver = r819.1ae6aa0
+	pkgrel = 5
+	url = https://github.com/torch/cunn
+	arch = x86_64
+	arch = i686
+	license = custom
+	makedepends = cmake
+	makedepends = git
+	depends = cuda
+	depends = torch7-cutorch-git
+	depends = torch7-git>=r819
+	depends = torch7-nn-git
+	provides = torch7-cunn
+	conflicts = torch7-cunn
+	source = torch7-cunn::git+https://github.com/torch/cunn
+	b2sums = SKIP
+
+pkgname = torch7-cunn-git
