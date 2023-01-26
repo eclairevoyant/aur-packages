@@ -1,0 +1,22 @@
+pkgbase = midori-git
+	pkgdesc = Lightweight Electron- and React-based web browser
+	pkgver = 10.0.2.r99.ea22c22
+	pkgrel = 1
+	url = https://astian.org/en/midori-browser-desktop
+	arch = any
+	license = LGPL3
+	makedepends = git
+	makedepends = jq
+	makedepends = libxcrypt-compat
+	makedepends = npm
+	makedepends = yarn
+	depends = electron17
+	depends = hicolor-icon-theme
+	source = git+https://gitlab.com/midori-web/midori-desktop.git
+	source = midori-git.sh
+	source = midori-git.desktop
+	b2sums = SKIP
+	b2sums = ed8e942ad985f6f8b501c3b7a7cc38e715481f9c9c8eeab429f960a1fad308194a09b2649d4274bdb42956804424000d2ea25585d2f0e40e5e8f87f910683294
+	b2sums = ba608913f8e279fafbfc7503ebf5bd41cb40455357caad15d6bb9bd70c9fdfaa8513d1efdc400adba6c00584c6508bdb0aa6f88e5f63d16e9d6f1835d9606262
+
+pkgname = midori-git
