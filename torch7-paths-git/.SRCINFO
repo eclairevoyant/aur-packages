@@ -1,0 +1,17 @@
+pkgbase = torch7-paths-git
+	pkgdesc = File name manipulation module for Torch7
+	pkgver = r45.4ebe222
+	pkgrel = 1
+	url = https://github.com/torch/paths
+	arch = x86_64
+	arch = i686
+	license = custom
+	makedepends = cmake
+	makedepends = git
+	depends = luajit
+	provides = torch7-paths
+	conflicts = torch7-paths
+	source = torch7-paths::git+https://github.com/torch/paths
+	b2sums = SKIP
+
+pkgname = torch7-paths-git
