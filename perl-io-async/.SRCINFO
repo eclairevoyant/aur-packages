@@ -1,0 +1,23 @@
+pkgbase = perl-io-async
+	pkgdesc = Asynchronous event-driven programming
+	pkgver = 0.802
+	pkgrel = 2
+	url = https://metacpan.org/release/IO-Async
+	arch = any
+	license = GPL
+	license = PerlArtistic
+	checkdepends = perl-future-io
+	checkdepends = perl-test-fatal
+	checkdepends = perl-test-identity
+	checkdepends = perl-test-metrics-any
+	checkdepends = perl-test-refcount
+	makedepends = perl-module-build
+	depends = perl>=5.10.0
+	depends = perl-future
+	depends = perl-struct-dumb
+	options = !emptydirs
+	options = purge
+	source = https://cpan.metacpan.org/authors/id/P/PE/PEVANS/IO-Async-0.802.tar.gz
+	sha256sums = e582731577767c47eac435ef2904663d4a750b0e6802a4a6189a37f0cb308738
+
+pkgname = perl-io-async
