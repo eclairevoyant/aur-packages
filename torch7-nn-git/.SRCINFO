@@ -1,0 +1,17 @@
+pkgbase = torch7-nn-git
+	pkgdesc = Neural networks package for Torch7
+	pkgver = r1839.8726825
+	pkgrel = 1
+	url = https://github.com/torch/nn
+	arch = x86_64
+	arch = i686
+	license = custom
+	makedepends = cmake
+	makedepends = git
+	depends = torch7-git>=r819
+	provides = torch7-nn
+	conflicts = torch7-nn
+	source = torch7-nn::git+https://github.com/torch/nn
+	b2sums = SKIP
+
+pkgname = torch7-nn-git
