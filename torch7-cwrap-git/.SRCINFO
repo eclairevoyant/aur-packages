@@ -1,0 +1,14 @@
+pkgbase = torch7-cwrap-git
+	pkgdesc = Tool to aid wrapping C functions to be used from Lua
+	pkgver = r35.dbd0a62
+	pkgrel = 2
+	url = https://github.com/torch/cwrap
+	arch = any
+	license = custom
+	makedepends = git
+	provides = torch7-cwrap
+	conflicts = torch7-cwrap
+	source = torch7-cwrap::git+https://github.com/torch/cwrap
+	b2sums = SKIP
+
+pkgname = torch7-cwrap-git
