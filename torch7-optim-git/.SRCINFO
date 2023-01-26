@@ -1,0 +1,17 @@
+pkgbase = torch7-optim-git
+	pkgdesc = Numeric optimization package for Torch
+	pkgver = 1.0.3.0.r240.a5ceed7
+	pkgrel = 1
+	url = https://github.com/torch/optim
+	arch = x86_64
+	arch = i686
+	license = BSD
+	makedepends = cmake
+	makedepends = git
+	depends = torch7-git>=r819
+	provides = torch7-optim
+	conflicts = torch7-optim
+	source = torch7-optim::git+https://github.com/torch/optim
+	b2sums = SKIP
+
+pkgname = torch7-optim-git
