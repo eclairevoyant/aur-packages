@@ -1,0 +1,36 @@
+pkgbase = theharvester-git
+	pkgdesc = An OSINT tool for gathering emails, names, subdomains, IPs and URLs related to a target using public sources.
+	pkgver = 3.2.3.r18.ga6959ad
+	pkgrel = 1
+	url = https://github.com/laramies/theHarvester
+	install = theHarvester.install
+	arch = any
+	license = GPL2
+	makedepends = git
+	makedepends = python-setuptools
+	makedepends = python-pytest
+	depends = python
+	depends = python-aiodns
+	depends = python-aiohttp
+	depends = python-aiomultiprocess
+	depends = python-aiosqlite
+	depends = python-beautifulsoup4
+	depends = python-certifi
+	depends = python-dnspython
+	depends = python-netaddr
+	depends = python-plotly
+	depends = python-pyppeteer
+	depends = python-yaml
+	depends = python-requests
+	depends = python-retrying
+	depends = python-shodan
+	depends = python-texttable
+	depends = python-lxml
+	depends = python-uvloop
+	provides = theharvester-git
+	conflicts = theharvester-git
+	source = theharvester-git::git+https://github.com/laramies/theHarvester.git
+	sha256sums = SKIP
+
+pkgname = theharvester-git
+
