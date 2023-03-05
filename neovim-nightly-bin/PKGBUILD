@@ -3,7 +3,7 @@
 
 _pkgname=neovim
 pkgname=neovim-nightly-bin
-pkgver=0.9.0+dev+1115+g446c353a5 
+pkgver=0.9.0+dev+1135+g419819b62
 pkgrel=1
 pkgdesc='Fork of Vim aiming to improve user experience, plugins, and GUIs (nightly build)'
 arch=('x86_64')
@@ -30,8 +30,7 @@ b2sums=('SKIP'
 install=$pkgname.install
 
 pkgver() {
-	cd nvim-linux64
-	./bin/nvim --version | awk 'NR == 1 { sub("NVIM v", ""); gsub("-", "+"); print $1 }'
+	nvim-linux64/bin/nvim --version | awk 'NR == 1 { sub("NVIM v", ""); gsub("-", "+"); print $1 }'
 }
 
 prepare() {
@@ -40,9 +39,9 @@ prepare() {
 }
 
 check() {
-	cd nvim-linux64
-	./bin/nvim --version
-	./bin/nvim --headless -u NONE -i NONE -c ':quit'
+	cd nvim-linux64/bin
+	./nvim --version
+	./nvim --headless -u NONE -i NONE -c ':quit'
 }
 
 package() {
