@@ -1,0 +1,25 @@
+pkgbase = stepmania-git
+	pkgdesc = An advanced rhythm game designed for both home and arcade use.
+	pkgver = 5.1.0.b2.r514.89229ed915
+	pkgrel = 1
+	url = https://www.stepmania.com/
+	arch = x86_64
+	license = MIT
+	makedepends = cmake
+	makedepends = git
+	makedepends = ninja
+	depends = ffmpeg
+	depends = glew
+	depends = gtk3
+	depends = jsoncpp
+	depends = libmad
+	depends = libtomcrypt
+	provides = stepmania
+	conflicts = stepmania
+	source = git+https://github.com/stepmania/stepmania.git
+	source = 0001-Don-t-require-assembler-for-system-FFmpeg.patch
+	sha256sums = SKIP
+	sha256sums = 99237c08a2d15ba56ef2763161181fbac356dc2e76bb6c1c7ccef1c8e30636b8
+
+pkgname = stepmania-git
+
