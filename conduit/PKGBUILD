@@ -9,7 +9,7 @@ arch=(x86_64)
 url='https://conduit.rs/'
 license=(Apache)
 depends=(gcc-libs)
-makedepends=(cargo clang git rust)
+makedepends=(cargo clang git rust rocksdb)
 backup=("etc/matrix-conduit/$pkgname.toml")
 source=("git+https://gitlab.com/famedly/$pkgname.git#commit=53f14a2c4c216b529cc63137d8704573197aed19"
         $pkgname.{service,sysusers,tmpfiles,toml})
