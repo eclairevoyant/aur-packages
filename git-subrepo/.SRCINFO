@@ -1,0 +1,15 @@
+pkgbase = git-subrepo
+	pkgdesc = Git submodule alternative
+	pkgver = 0.4.6
+	pkgrel = 1
+	url = https://github.com/ingydotnet/git-subrepo
+	arch = any
+	license = MIT
+	checkdepends = perl
+	depends = bash
+	depends = git
+	backup = etc/profile.d/git-subrepo.sh
+	source = git+https://github.com/ingydotnet/git-subrepo.git#commit=110b9eb13f259986fffcf11e8fb187b8cce50921
+	b2sums = SKIP
+
+pkgname = git-subrepo
