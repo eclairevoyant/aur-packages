@@ -1,0 +1,15 @@
+pkgbase = kana-git
+	pkgdesc = Command to transliterate hiragana and katakana to ASCII
+	pkgver = r6.3eb1e80
+	pkgrel = 2
+	url = https://github.com/robpike/kana
+	arch = i686
+	arch = x86_64
+	license = BSD
+	makedepends = git
+	makedepends = go
+	depends = glibc
+	source = git+https://github.com/robpike/kana.git
+	b2sums = SKIP
+
+pkgname = kana-git
