@@ -1,0 +1,15 @@
+pkgbase = hed-git
+	pkgdesc = Fast hexadecimal editor
+	pkgver = 0.5.r512.g8a4eb03
+	pkgrel = 1
+	url = https://repo.or.cz/w/hed.git
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	depends = glibc
+	depends = ncurses
+	source = git://repo.or.cz/hed.git
+	b2sums = SKIP
+
+pkgname = hed-git
