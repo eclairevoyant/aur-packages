@@ -1,0 +1,15 @@
+pkgbase = hira-git
+	pkgdesc = Command to transliterate ASCII to Hiragana
+	pkgver = r13.3eb60dc
+	pkgrel = 2
+	url = https://github.com/robpike/hira
+	arch = i686
+	arch = x86_64
+	license = BSD
+	makedepends = git
+	makedepends = go
+	depends = glibc
+	source = git+https://github.com/robpike/hira.git
+	b2sums = SKIP
+
+pkgname = hira-git
