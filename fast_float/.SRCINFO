@@ -1,0 +1,14 @@
+pkgbase = fast_float
+	pkgdesc = Fast and exact implementation of the C++ from_chars functions:4x faster than strtod
+	pkgver = 5.2.0
+	pkgrel = 1
+	url = https://github.com/fastfloat/fast_float
+	arch = x86_64
+	license = Apache
+	license = Boost
+	license = MIT
+	makedepends = cmake
+	source = fast_float-5.2.0.tar.gz::https://github.com/fastfloat/fast_float/archive/refs/tags/v5.2.0.tar.gz
+	b2sums = 39133eda20acd5f1f049e8040815a67aee588ab93be4953bde3b9227fb691e099581ef79b12b740437b78a9b4c9007762b44d9726ca07505ad5cb51394d8e3fd
+
+pkgname = fast_float
