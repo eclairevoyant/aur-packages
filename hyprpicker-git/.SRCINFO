@@ -1,0 +1,28 @@
+pkgbase = hyprpicker-git
+	pkgdesc = A wlroots-compatible Wayland color picker that does not suck
+	pkgver = 0.1.1.r1.1d05cc3
+	pkgrel = 1
+	url = https://github.com/hyprwm/hyprpicker
+	arch = x86_64
+	license = BSD
+	makedepends = cmake
+	makedepends = gdb
+	makedepends = git
+	makedepends = libglvnd
+	makedepends = libjpeg-turbo
+	makedepends = meson
+	makedepends = ninja
+	makedepends = pango
+	makedepends = wayland-protocols
+	makedepends = xorgproto
+	depends = cairo
+	depends = gcc-libs
+	depends = glibc
+	depends = wayland
+	optdepends = wl-clipboard: --autocopy
+	provides = hyprpicker=0.1.1
+	conflicts = hyprpicker
+	source = git+https://github.com/hyprwm/hyprpicker.git
+	b2sums = SKIP
+
+pkgname = hyprpicker-git
