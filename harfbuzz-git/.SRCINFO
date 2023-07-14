@@ -28,7 +28,7 @@ pkgname = harfbuzz-git
 	depends = libglib-2.0.so
 	depends = libgobject-2.0.so
 	optdepends = harfbuzz-utils: utilities
-	provides = harfbuzz=8.0.1.r1.5a65ede5d
+	provides = harfbuzz=8.0.1
 	provides = libharfbuzz.so
 	provides = libharfbuzz-subset.so
 	provides = libharfbuzz-gobject.so
@@ -38,7 +38,7 @@ pkgname = harfbuzz-cairo-git
 	pkgdesc = OpenType text shaping engine - Cairo integration
 	depends = libcairo.so
 	depends = libharfbuzz.so
-	provides = harfbuzz-cairo=8.0.1.r1.5a65ede5d
+	provides = harfbuzz-cairo=8.0.1
 	provides = libharfbuzz-cairo.so
 	conflicts = harfbuzz-cairo
 
@@ -46,7 +46,7 @@ pkgname = harfbuzz-icu-git
 	pkgdesc = OpenType text shaping engine - ICU integration
 	depends = libharfbuzz.so
 	depends = libicuuc.so
-	provides = harfbuzz-icu=8.0.1.r1.5a65ede5d
+	provides = harfbuzz-icu=8.0.1
 	provides = libharfbuzz-icu.so
 	conflicts = harfbuzz-icu
 
@@ -63,11 +63,11 @@ pkgname = harfbuzz-utils-git
 	depends = libharfbuzz-gobject.so
 	depends = libharfbuzz-subset.so
 	depends = libharfbuzz.so
-	provides = harfbuzz-utils=8.0.1.r1.5a65ede5d
+	provides = harfbuzz-utils=8.0.1
 	conflicts = harfbuzz-utils
 
 pkgname = harfbuzz-docs-git
 	pkgdesc = OpenType text shaping engine - Documentation
 	depends = 
-	provides = harfbuzz-docs=8.0.1.r1.5a65ede5d
+	provides = harfbuzz-docs=8.0.1
 	conflicts = harfbuzz-docs

@@ -79,7 +79,7 @@ package_harfbuzz-git() {
     libg{lib,object}-2.0.so
   )
   optdepends=('harfbuzz-utils: utilities')
-  provides=("harfbuzz=${pkgver%%-.r*}" libharfbuzz{,-subset,-gobject}.so)
+  provides=("harfbuzz=${pkgver%%.r*}" libharfbuzz{,-subset,-gobject}.so)
   conflicts=(harfbuzz)
 
   meson install -C build --destdir "$pkgdir"
@@ -108,7 +108,7 @@ package_harfbuzz-cairo-git() {
     libcairo.so
     libharfbuzz.so
   )
-  provides=("harfbuzz-cairo=${pkgver%%-.r*}" libharfbuzz-cairo.so)
+  provides=("harfbuzz-cairo=${pkgver%%.r*}" libharfbuzz-cairo.so)
   conflicts=(harfbuzz-cairo)
 
   mv hb-cairo/* "$pkgdir"
@@ -122,7 +122,7 @@ package_harfbuzz-icu-git() {
     libharfbuzz.so
     libicuuc.so
   )
-  provides=("harfbuzz-icu=${pkgver%%-.r*}" libharfbuzz-icu.so)
+  provides=("harfbuzz-icu=${pkgver%%.r*}" libharfbuzz-icu.so)
   conflicts=(harfbuzz-icu)
 
   mv hb-icu/* "$pkgdir"
@@ -145,7 +145,7 @@ package_harfbuzz-utils-git() {
     libharfbuzz-subset.so
     libharfbuzz.so
   )
-  provides=("harfbuzz-utils=${pkgver%%-.r*}")
+  provides=("harfbuzz-utils=${pkgver%%.r*}")
   conflicts=(harfbuzz-utils)
 
   mv hb-utils/* "$pkgdir"
@@ -156,7 +156,7 @@ package_harfbuzz-utils-git() {
 package_harfbuzz-docs-git() {
   pkgdesc+=" - Documentation"
   depends=()
-  provides=("harfbuzz-docs=${pkgver%%-.r*}")
+  provides=("harfbuzz-docs=${pkgver%%.r*}")
   conflicts=(harfbuzz-docs)
 
   mv hb-docs/* "$pkgdir"
