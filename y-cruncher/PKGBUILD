@@ -7,7 +7,7 @@
 
 pkgname=y-cruncher
 pkgver=0.8.1.9317
-pkgrel=1
+pkgrel=2
 pkgdesc="The first scalable multi-threaded Pi-benchmark for multi-core systems"
 arch=(x86_64)
 url="http://www.numberworld.org/$pkgname"
@@ -20,11 +20,23 @@ source=("$url/$pkgname%20v$pkgver-dynamic.tar.xz"
 b2sums=('295ce29002eff758773b1d250eadd679f4a9b633a8f068fa66b0593a19a24f0ddcef4ca213333360838a72d5e7c07c3fe9f44ff5c601d414ca11ed8b44fabf51'
         '54566d34c40a1ce90c19df611838a54c898f530b361c83998fc68103b108b5da4a03cd5616ffcdec5185c0fea2fc837ca2db337364d0d9c783ccbc746e9d92fc')
 
-prepare() {
-	mv "$pkgname v$pkgver-dynamic/Binaries/05-A64 ~ Kasumi" $pkgname
-}
-
 package() {
-	install -vDm755 $pkgname -t "$pkgdir/usr/bin/"
-	install -vDm644 $pkgname.LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+	install -vDm644 $pkgname.LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"	
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/y-cruncher" "$pkgdir/opt/y-cruncher/y-cruncher"
+
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/05-A64 ~ Kasumi" "$pkgdir/opt/y-cruncher/Binaries/05-A64 ~ Kasumi"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/08-NHM ~ Ushio" "$pkgdir/opt/y-cruncher/Binaries/08-NHM ~ Ushio"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/11-BD1 ~ Miyu" "$pkgdir/opt/y-cruncher/Binaries/11-BD1 ~ Miyu"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/11-SNB ~ Hina" "$pkgdir/opt/y-cruncher/Binaries/11-SNB ~ Hina"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/13-HSW ~ Airi" "$pkgdir/opt/y-cruncher/Binaries/13-HSW ~ Airi"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/14-BDW ~ Kurumi" "$pkgdir/opt/y-cruncher/Binaries/14-BDW ~ Kurumi"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/17-SKX ~ Kotori" "$pkgdir/opt/y-cruncher/Binaries/17-SKX ~ Kotori"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/17-ZN1 ~ Yukina" "$pkgdir/opt/y-cruncher/Binaries/17-ZN1 ~ Yukina"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/18-CNL ~ Shinoa" "$pkgdir/opt/y-cruncher/Binaries/18-CNL ~ Shinoa"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/19-ZN2 ~ Kagari" "$pkgdir/opt/y-cruncher/Binaries/19-ZN2 ~ Kagari"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/20-ZN3 ~ Yuzuki" "$pkgdir/opt/y-cruncher/Binaries/20-ZN3 ~ Yuzuki"
+	install -vDm755 "$srcdir/$pkgname v$pkgver-dynamic/Binaries/22-ZN4 ~ Kizuna" "$pkgdir/opt/y-cruncher/Binaries/22-ZN4 ~ Kizuna"
+
+	install -d "$pkgdir/usr/bin"
+	ln -s "/opt/$pkgname/$pkgname" "$pkgdir/usr/bin/$pkgname"
 }
