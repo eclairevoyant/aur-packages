@@ -168,14 +168,9 @@ build() {
 }
 
 package() {
+	echo -e '#!/usr/bin/sh\n/opt/pcsx2/pcsx2-qt "$@"' > "$pkgdir/usr/bin/pcsx2"
 	install -Dm644 patches.zip -t "$pkgdir/opt/$pkgname/resources/"
 	cp -r build/bin/* "$pkgdir/opt/$pkgname/"
-
-	install -Dm755 /dev/stdin "$pkgdir/usr/bin/pcsx2-qt" <<eof
-#!/usr/bin/env sh
-/opt/pcsx2/pcsx2-qt "$@"
-eof
-
 	cd $pkgname
 	install -Dm644 .github/workflows/scripts/linux/pcsx2-qt.desktop \
 		-t "$pkgdir/usr/share/applications/"
