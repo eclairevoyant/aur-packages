@@ -171,7 +171,7 @@ package() {
 	install -Dm644 patches.zip -t "$pkgdir/opt/$pkgname/resources/"
 	cp -r build/bin/* "$pkgdir/opt/$pkgname/"
 
-	install -Dm755 /dev/stdin "$pkgdir/usr/bin/pcsx2-qt" <<eof
+	install -Dm755 /dev/stdin "$pkgdir/usr/bin/pcsx2-qt" <<'eof'
 #!/usr/bin/env sh
 /opt/pcsx2/pcsx2-qt "$@"
 eof
