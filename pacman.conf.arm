@@ -43,8 +43,8 @@ LocalFileSigLevel = Optional
 #RemoteFileSigLevel = Required
 
 # NOTE: You must run `pacman-key --init` before first using pacman; the local
-# keyring can then be populated with the keys of all official Arch Linux
-# packagers with `pacman-key --populate archlinux`.
+# keyring can then be populated with the keys of all official Arch Linux ARM
+# packagers with `pacman-key --populate archlinuxarm`.
 
 #
 # REPOSITORIES
@@ -73,9 +73,6 @@ LocalFileSigLevel = Optional
 Include = /etc/pacman.d/mirrorlist
 
 [extra]
-Include = /etc/pacman.d/mirrorlist
-
-[community]
 Include = /etc/pacman.d/mirrorlist
 
 [alarm]
