@@ -3,13 +3,13 @@
 
 _pkgname=hyprpicker
 pkgname="$_pkgname-git"
-pkgver=0.1.1.r2.0889bd5
-pkgrel=2
+pkgver=0.2.0.r6.0eb4919
+pkgrel=1
 pkgdesc="A wlroots-compatible Wayland color picker that does not suck"
 arch=(x86_64)
 url="https://github.com/hyprwm/$_pkgname"
-license=(BSD)
-depends=(cairo gcc-libs glibc wayland)
+license=('BSD-3-Clause')
+depends=(cairo gcc-libs glibc libxkbcommon wayland)
 makedepends=(
 	cmake
 	gdb
@@ -34,12 +34,14 @@ pkgver() {
 }
 
 build() {
-	make -C $_pkgname all
+	cmake -B build -S $_pkgname
+	cmake --build build
 }
 
 package() {
-	cd $_pkgname
 	install -vDm755 build/hyprpicker -t "$pkgdir/usr/bin/"
+
+	cd $_pkgname
 	install -vDm644 LICENSE          -t "$pkgdir/usr/share/licenses/$pkgname/"
 	install -vDm644 doc/$_pkgname.1  -t "$pkgdir/usr/share/man/man1/"
 	install -vDm644 README.md        -t "$pkgdir/usr/share/doc/$_pkgname/"
