@@ -7,7 +7,7 @@
 # Contributor: vEX <vex at niechift dot com>
 
 pkgname=pcsx2
-pkgver=1.7.5611
+pkgver=1.7.5669
 pkgrel=1
 pkgdesc='A Sony PlayStation 2 emulator'
 arch=(x86_64)
@@ -57,13 +57,12 @@ optdepends=('qt6-wayland: Wayland support'
             'libpipewire: Pipewire support'
             'libpulse: PulseAudio support')
 
-_tag=b4992856f7e475b0a4a26aafb997baa69278ec13
+_tag=1cd69977e4fac962450576205ef40c414137fafb
 options=(!lto)
 source=(
 	"git+https://github.com/PCSX2/pcsx2.git#tag=${_tag}"
 	git+https://github.com/PCSX2/pcsx2_patches.git
 	lz4-pcsx2::git+https://github.com/lz4/lz4.git
-	xz-pcsx2::git+https://github.com/tukaani-project/xz.git
 	git+https://github.com/google/googletest.git
 	git+https://github.com/fmtlib/fmt.git
 	git+https://github.com/biojppm/rapidyaml.git
@@ -89,7 +88,6 @@ b2sums=('SKIP'
         'SKIP'
         'SKIP'
         'SKIP'
-        'SKIP'
         'SKIP')
 install=$pkgname.install
 
@@ -98,7 +96,6 @@ prepare() {
 	local submodule
 	_pcsx2_submodules=(
 		lz4-pcsx2::3rdparty/lz4/lz4
-		xz-pcsx2::3rdparty/xz/xz
 		googletest::3rdparty/gtest
 		fmt::3rdparty/fmt/fmt
 		libwebp::3rdparty/libwebp/libwebp
