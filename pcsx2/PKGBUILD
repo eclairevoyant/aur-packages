@@ -7,7 +7,7 @@
 # Contributor: vEX <vex at niechift dot com>
 
 pkgname=pcsx2
-pkgver=1.7.5669
+pkgver=1.7.5715
 pkgrel=1
 pkgdesc='A Sony PlayStation 2 emulator'
 arch=(x86_64)
@@ -34,6 +34,7 @@ depends=(
   qt6-base
   qt6-svg
   sdl2
+  shaderc-non-semantic-debug
   soundtouch
   wayland
   xz
@@ -57,12 +58,11 @@ optdepends=('qt6-wayland: Wayland support'
             'libpipewire: Pipewire support'
             'libpulse: PulseAudio support')
 
-_tag=1cd69977e4fac962450576205ef40c414137fafb
+_tag=3c901543bda8cadb21da24b1b47792a8bbacf82d
 options=(!lto)
 source=(
 	"git+https://github.com/PCSX2/pcsx2.git#tag=${_tag}"
 	git+https://github.com/PCSX2/pcsx2_patches.git
-	lz4-pcsx2::git+https://github.com/lz4/lz4.git
 	git+https://github.com/google/googletest.git
 	git+https://github.com/fmtlib/fmt.git
 	git+https://github.com/biojppm/rapidyaml.git
@@ -70,16 +70,9 @@ source=(
 	git+https://github.com/biojppm/c4core.git
 	git+https://github.com/biojppm/debugbreak.git
 	git+https://github.com/fastfloat/fast_float.git
-	git+https://github.com/KhronosGroup/glslang.git
-	git+https://github.com/webmproject/libwebp.git
 	vulkan-headers::git+https://github.com/KhronosGroup/Vulkan-Headers.git
-	git+https://github.com/facebook/zstd.git
 )
 b2sums=('SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
         'SKIP'
         'SKIP'
         'SKIP'
@@ -95,14 +88,10 @@ prepare() {
 	cd $pkgname
 	local submodule
 	_pcsx2_submodules=(
-		lz4-pcsx2::3rdparty/lz4/lz4
 		googletest::3rdparty/gtest
 		fmt::3rdparty/fmt/fmt
-		libwebp::3rdparty/libwebp/libwebp
 		rapidyaml::3rdparty/rapidyaml/rapidyaml
-		glslang::3rdparty/glslang/glslang
 		vulkan-headers::3rdparty/vulkan-headers
-		zstd::3rdparty/zstd/zstd
 	)
 	# must be done this way due to recursive submodules
 	for submodule in ${_pcsx2_submodules[@]}; do
@@ -145,16 +134,11 @@ build() {
 		-DCMAKE_SHARED_LINKER_FLAGS_INIT="-fuse-ld=lld" \
 		-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON \
 		-DCMAKE_BUILD_TYPE=Release \
-		-DQT_BUILD=ON \
-		-DCUBEB_API=ON \
 		-DX11_API=ON \
 		-DWAYLAND_API=ON \
 		-DENABLE_SETCAP=OFF \
-		-DUSE_SYSTEM_SDL2=ON \
-		-DUSE_SYSTEM_ZSTD=OFF \
 		-DDISABLE_ADVANCE_SIMD=TRUE \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DDISABLE_BUILD_DATE=ON
+		-DCMAKE_INSTALL_PREFIX=/usr
 
 	ninja -C build -v
 }
