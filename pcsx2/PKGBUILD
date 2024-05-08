@@ -7,7 +7,7 @@
 # Contributor: vEX <vex at niechift dot com>
 
 pkgname=pcsx2
-pkgver=1.7.5715
+pkgver=1.7.5788
 pkgrel=1
 pkgdesc='A Sony PlayStation 2 emulator'
 arch=(x86_64)
@@ -58,7 +58,7 @@ optdepends=('qt6-wayland: Wayland support'
             'libpipewire: Pipewire support'
             'libpulse: PulseAudio support')
 
-_tag=3c901543bda8cadb21da24b1b47792a8bbacf82d
+_tag=7bc5427908a0e2985bd354446e4bfeeedd4cd45b
 options=(!lto)
 source=(
 	"git+https://github.com/PCSX2/pcsx2.git#tag=${_tag}"
@@ -72,7 +72,7 @@ source=(
 	git+https://github.com/fastfloat/fast_float.git
 	vulkan-headers::git+https://github.com/KhronosGroup/Vulkan-Headers.git
 )
-b2sums=('SKIP'
+b2sums=('4e7df739987b26a0af09bbc807355eca2f7c3d7df671abbcdba50325f449dfa2c6db2bb63c093af93e934a3ff00e55407ad77918823afb60992b39ce8dfbc3c6'
         'SKIP'
         'SKIP'
         'SKIP'
