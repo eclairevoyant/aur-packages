@@ -3,7 +3,7 @@
 
 _pkgname=neovim
 pkgname=neovim-nightly-bin
-pkgver=0.9.0+dev+1135+g419819b62
+pkgver=0.11.0+dev+1775+g4a2a54f993
 pkgrel=1
 pkgdesc='Fork of Vim aiming to improve user experience, plugins, and GUIs (nightly build)'
 arch=('x86_64')
@@ -19,8 +19,8 @@ optdepends=('python-neovim: for Python 3 plugin support (see :help provider-pyth
 provides=("$_pkgname=${pkgver/\+*/}" 'vim-plugin-runtime')
 conflicts=("$_pkgname")
 _date="$(date -u +%Y%m%d)"
-source=("$_pkgname-$_date.tar.gz::https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
-        "$_pkgname-$_date.tar.gz.sha256sum::https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz.sha256sum"
+source=("$_pkgname-$_date.tar.gz::https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz"
+        "$_pkgname-$_date.tar.gz.sha256sum::https://github.com/neovim/neovim/releases/download/nightly/shasum.txt"
         "$pkgname-archlinux.vim"
         "$pkgname-sysinit.vim")
 b2sums=('SKIP'
@@ -30,16 +30,18 @@ b2sums=('SKIP'
 install=$pkgname.install
 
 pkgver() {
-	nvim-linux64/bin/nvim --version | awk 'NR == 1 { sub("NVIM v", ""); gsub("-", "+"); print $1 }'
+	nvim-linux-x86_64/bin/nvim --version | awk 'NR == 1 { sub("NVIM v", ""); gsub("-", "+"); print $1 }'
 }
 
 prepare() {
-	sed -i "s/nvim-linux64/$_pkgname-$_date/" $_pkgname-$_date.tar.gz.sha256sum
-	sha256sum -c $_pkgname-$_date.tar.gz.sha256sum
+  SUM_FILE=$_pkgname-$_date.tar.gz.sha256sum
+  sed -i '/nvim-linux-x86_64.tar.gz/!d' $SUM_FILE
+	sed -i "s/nvim-linux-x86_64/$_pkgname-$_date/" $SUM_FILE
+	sha256sum -c $SUM_FILE
 }
 
 check() {
-	cd nvim-linux64/bin
+	cd nvim-linux-x86_64/bin
 	./nvim --version
 	./nvim --headless -u NONE -i NONE -c ':quit'
 }
@@ -49,7 +51,7 @@ package() {
 	install -Dm644 $pkgname-sysinit.vim "$pkgdir/etc/xdg/nvim/sysinit.vim"
 	install -Dm644 $pkgname-archlinux.vim "$pkgdir/usr/share/nvim/archlinux.vim"
 
-	cd nvim-linux64
+	cd nvim-linux-x86_64
 	install -Dm755 bin/nvim -t "$pkgdir/usr/bin/"
 	cp -r lib share "$pkgdir/usr/"
 }
